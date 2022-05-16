@@ -17,15 +17,35 @@ const useStyles = createUseStyles({
   active: {
     backgroundColor: '#244677',
   },
+  sideMenu: {
+    position: 'absolute',
+    top: '50%',
+    right: '-250%',
+    width: '250%',
+    height: '95%',
+    borderRadius: '10px',
+    padding: '0.7rem',
+    backgroundColor: '#244677',
+    transform: 'translateY(-50%)',
+  },
 });
 
-const MenuItem = ({ Icon, title }) => {
+const MenuItem = ({ Icon, title, isActive }) => {
   const styles = useStyles();
 
   return (
-    <div className={`${styles.conatiner} ${styles.active}`}>
+    <div
+      className={
+        isActive ? `${styles.conatiner} ${styles.active}` : styles.conatiner
+      }
+    >
       <Icon />
       <span>{title}</span>
+
+      {/* Side menue */}
+      {isActive && title !== 'Dashboard' && (
+        <div className={styles.sideMenu}>Sub</div>
+      )}
     </div>
   );
 };

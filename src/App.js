@@ -22,6 +22,7 @@ const useStyles = createUseStyles({
     backgroundColor: '#000F24',
   },
   Menu: {
+    position: 'relative',
     width: '7.5rem',
     height: '100%',
     display: 'flex',
@@ -59,7 +60,7 @@ const App = () => {
       <div className={styles.container}>
         <div className={styles.Menu}>
           <MenuItem Icon={DashboardIcon} title="Dashboard" />
-          <MenuItem Icon={SnipeIcon} title="Snipe" />
+          <MenuItem Icon={SnipeIcon} title="Snipe" isActive={true} />
           <MenuItem Icon={AutoMintIcon} title="Auto Mint" />
           <MenuItem Icon={BulkIcon} title="Bulk" />
         </div>
