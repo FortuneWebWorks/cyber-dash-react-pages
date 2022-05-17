@@ -152,7 +152,7 @@ export default function Snipe() {
 
       {/* 3: Select & Btn */}
       <Stack spacing={1} direction="row" alignItems="flex-end">
-        <Stack fontSize="0.8rem">
+        <Stack fontSize="0.8rem" spacing={0.5}>
           <label htmlFor="text">Collection Slug *</label>
           <TextField
             className={styles.textField}
@@ -189,7 +189,7 @@ export default function Snipe() {
 
       {/* 4: number input */}
       <Stack spacing={1}>
-        <Stack fontSize="0.8rem">
+        <Stack fontSize="0.8rem" spacing={0.5}>
           <label htmlFor="text">Snipe Below *</label>
           <TextField
             className={styles.textField}
@@ -342,19 +342,26 @@ export default function Snipe() {
       {/* 10: Toggle buttons */}
       <Stack>
         <ToggleButtonGroup
+          fullWidth
           value={alignment}
           exclusive
           onChange={handleToggle}
           variant="contained"
           color="primary"
         >
-          <ActiveBtn value="Fast(90)">Fast(90)</ActiveBtn>
-          <ActiveBtn value="Multiplier">Multiplier</ActiveBtn>
-          <ActiveBtn value="Custom">Custom</ActiveBtn>
+          <ActiveBtn value="Fast(90)" size="small">
+            Fast(90)
+          </ActiveBtn>
+          <ActiveBtn value="Multiplier" size="small">
+            Multiplier
+          </ActiveBtn>
+          <ActiveBtn value="Custom" size="small">
+            Custom
+          </ActiveBtn>
         </ToggleButtonGroup>
       </Stack>
 
-      {/* 11: two text input */}
+      {/* 11: Three text input */}
       <Stack className={styles.secondRow}>
         <Stack direction="row" spacing={1}>
           <Stack fontSize="0.6rem" spacing={0.5}>
