@@ -31,6 +31,7 @@ const useStyles = createUseStyles({
     padding: '0.7rem',
     backgroundColor: '#244677',
     transform: 'translateY(-50%)',
+    // overflow: 'auto',
   },
 });
 

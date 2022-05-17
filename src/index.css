@@ -10,3 +10,8 @@ body {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;
 }
+
+div::-webkit-scrollbar {
+  width: 0.2rem;
+  background-color: rgb(23, 61, 94);
+}

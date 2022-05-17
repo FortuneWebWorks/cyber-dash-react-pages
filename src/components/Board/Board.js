@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import { createUseStyles } from 'react-jss';
 // Menu svgs
 import { ReactComponent as SnipeIcon } from '../../assets/icons/snipe.svg';
@@ -30,12 +28,6 @@ const useStyles = createUseStyles({
 
 const Bord = () => {
   const styles = useStyles();
-
-  const [active, setActive] = useState('Snipe');
-
-  const onClickHandler = (target) => {
-    setActive(target);
-  };
 
   return (
     <div className={styles.container}>
