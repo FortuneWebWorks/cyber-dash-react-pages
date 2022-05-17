@@ -1,7 +1,4 @@
 import { createUseStyles } from 'react-jss';
-import FormControl from '@mui/material/FormControl';
-import InputLabel from '@mui/material/InputLabel';
-import NativeSelect from '@mui/material/NativeSelect';
 
 const useStyles = createUseStyles({
   conatiner: {
@@ -33,37 +30,25 @@ const useStyles = createUseStyles({
   },
 });
 
-const MenuItem = ({ Icon, title, isActive }) => {
+const MenuItem = ({ Icon, title, active, SideMenu, onClickHandler }) => {
   const styles = useStyles();
 
   return (
     <div
       className={
-        isActive ? `${styles.conatiner} ${styles.active}` : styles.conatiner
+        active === title
+          ? `${styles.conatiner} ${styles.active}`
+          : styles.conatiner
       }
+      onClick={onClickHandler.bind(null, title)}
     >
       <Icon />
       <span>{title}</span>
 
-      {/* Side menue */}
-      {isActive && title !== 'Dashboard' && (
+      {/* Side menu */}
+      {active === title && title !== 'Dashboard' && (
         <div className={styles.sideMenu}>
-          <FormControl fullWidth>
-            <InputLabel variant="standard" htmlFor="uncontrolled-native">
-              Age
-            </InputLabel>
-            <NativeSelect
-              defaultValue={30}
-              inputProps={{
-                name: 'age',
-                id: 'uncontrolled-native',
-              }}
-            >
-              <option value={10}>Ten</option>
-              <option value={20}>Twenty</option>
-              <option value={30}>Thirty</option>
-            </NativeSelect>
-          </FormControl>
+          <SideMenu />
         </div>
       )}
     </div>
