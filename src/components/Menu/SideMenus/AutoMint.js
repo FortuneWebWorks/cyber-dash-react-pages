@@ -1,9 +1,13 @@
 import FormControl from '@mui/material/FormControl';
 import InputLabel from '@mui/material/InputLabel';
-import NativeSelect from '@mui/material/NativeSelect';
+import Select from '@mui/material/Select';
 
 const AutoMint = () => {
-  return <div>AutoMint</div>;
+  return (
+    <FormControl>
+      <Select />
+    </FormControl>
+  );
 };
 
 export default AutoMint;

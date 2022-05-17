@@ -8,7 +8,7 @@ const useStyles = createUseStyles({
     flexDirection: 'column',
     justifyContent: 'center',
     alignItems: 'center',
-    gap: '1rem',
+    gap: '0.7rem',
     borderRadius: '20px',
     padding: '0.7rem 0.7rem',
     backgroundColor: 'transparent',
@@ -23,6 +23,10 @@ const useStyles = createUseStyles({
     right: '-250%',
     width: '250%',
     height: '95%',
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
     borderRadius: '10px',
     padding: '0.7rem',
     backgroundColor: '#244677',
@@ -40,13 +44,13 @@ const MenuItem = ({ Icon, title, active, SideMenu, onClickHandler }) => {
           ? `${styles.conatiner} ${styles.active}`
           : styles.conatiner
       }
-      onClick={onClickHandler.bind(null, title)}
+      onClick={onClickHandler && onClickHandler.bind(null, title)}
     >
       <Icon />
       <span>{title}</span>
 
       {/* Side menu */}
-      {active === title && title !== 'Dashboard' && (
+      {SideMenu && active === title && title !== 'Dashboard' && (
         <div className={styles.sideMenu}>
           <SideMenu />
         </div>
